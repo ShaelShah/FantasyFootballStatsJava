@@ -1,3 +1,5 @@
+import stats.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,6 +8,9 @@ public class Player {
     private String id;
     private String name;
     private List<Week> weeks;
+
+    // Games Played
+    private double gamesPlayed;
 
     // Trend stats
     private double passingAttsGm;
@@ -39,245 +44,8 @@ public class Player {
     private double fumblesGm;
     private double fumblesLostGm;
 
-    public double getFumblesGm() {
-        return fumblesGm;
-    }
-
-    public void setFumblesGm(double fumblesGm) {
-        this.fumblesGm = fumblesGm;
-    }
-
-    public double getFumblesLostGm() {
-        return fumblesLostGm;
-    }
-
-    public void setFumblesLostGm(double fumblesLostGm) {
-        this.fumblesLostGm = fumblesLostGm;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Week> getWeeks() {
-        return weeks;
-    }
-
-    public void setWeeks(List<Week> weeks) {
-        this.weeks = weeks;
-    }
-
-    public double getPassingAttsGm() {
-        return passingAttsGm;
-    }
-
-    public void setPassingAttsGm(double passingAttsGm) {
-        this.passingAttsGm = passingAttsGm;
-    }
-
-    public double getPassingCmpsGm() {
-        return passingCmpsGm;
-    }
-
-    public void setPassingCmpsGm(double passingCmpsGm) {
-        this.passingCmpsGm = passingCmpsGm;
-    }
-
-    public double getPassingCmpPerGm() {
-        return passingCmpPerGm;
-    }
-
-    public void setPassingCmpPerGm(double passingCmpPerGm) {
-        this.passingCmpPerGm = passingCmpPerGm;
-    }
-
-    public double getPassingYardsGm() {
-        return passingYardsGm;
-    }
-
-    public void setPassingYardsGm(double passingYardsGm) {
-        this.passingYardsGm = passingYardsGm;
-    }
-
-    public double getPassingIntsGm() {
-        return passingIntsGm;
-    }
-
-    public void setPassingIntsGm(double passingIntsGm) {
-        this.passingIntsGm = passingIntsGm;
-    }
-
-    public double getPassingTDsGm() {
-        return passingTDsGm;
-    }
-
-    public void setPassingTDsGm(double passingTDsGm) {
-        this.passingTDsGm = passingTDsGm;
-    }
-
-    public double getPassingTwoPtsGm() {
-        return passingTwoPtsGm;
-    }
-
-    public void setPassingTwoPtsGm(double passingTwoPtsGm) {
-        this.passingTwoPtsGm = passingTwoPtsGm;
-    }
-
-    public double getPassingTwoPtAttsGm() {
-        return passingTwoPtAttsGm;
-    }
-
-    public void setPassingTwoPtAttsGm(double passingTwoPtAttsGm) {
-        this.passingTwoPtAttsGm = passingTwoPtAttsGm;
-    }
-
-    public double getYardsPerAttGm() {
-        return yardsPerAttGm;
-    }
-
-    public void setYardsPerAttGm(double yardsPerAttGm) {
-        this.yardsPerAttGm = yardsPerAttGm;
-    }
-
-    public double getYardsPerCmpGm() {
-        return yardsPerCmpGm;
-    }
-
-    public void setYardsPerCmpGm(double yardsPerCmpGm) {
-        this.yardsPerCmpGm = yardsPerCmpGm;
-    }
-
-    public double getRushingAttemptsGm() {
-        return rushingAttemptsGm;
-    }
-
-    public void setRushingAttemptsGm(double rushingAttemptsGm) {
-        this.rushingAttemptsGm = rushingAttemptsGm;
-    }
-
-    public double getRushingYardsGm() {
-        return rushingYardsGm;
-    }
-
-    public void setRushingYardsGm(double rushingYardsGm) {
-        this.rushingYardsGm = rushingYardsGm;
-    }
-
-    public double getRushingYardsAfterContactGm() {
-        return rushingYardsAfterContactGm;
-    }
-
-    public void setRushingYardsAfterContactGm(double rushingYardsAfterContactGm) {
-        this.rushingYardsAfterContactGm = rushingYardsAfterContactGm;
-    }
-
-    public double getRushingTDsGm() {
-        return rushingTDsGm;
-    }
-
-    public void setRushingTDsGm(double rushingTDsGm) {
-        this.rushingTDsGm = rushingTDsGm;
-    }
-
-    public double getRushingTwoPtsGm() {
-        return rushingTwoPtsGm;
-    }
-
-    public void setRushingTwoPtsGm(double rushingTwoPtsGm) {
-        this.rushingTwoPtsGm = rushingTwoPtsGm;
-    }
-
-    public double getYardsPerCarryGm() {
-        return yardsPerCarryGm;
-    }
-
-    public void setYardsPerCarryGm(double yardsPerCarryGm) {
-        this.yardsPerCarryGm = yardsPerCarryGm;
-    }
-
-    public double getReceivingTargetsGm() {
-        return receivingTargetsGm;
-    }
-
-    public void setReceivingTargetsGm(double receivingTargetsGm) {
-        this.receivingTargetsGm = receivingTargetsGm;
-    }
-
-    public double getReceivingReceptionsGm() {
-        return receivingReceptionsGm;
-    }
-
-    public void setReceivingReceptionsGm(double receivingReceptionsGm) {
-        this.receivingReceptionsGm = receivingReceptionsGm;
-    }
-
-    public double getReceivingYardsGm() {
-        return receivingYardsGm;
-    }
-
-    public void setReceivingYardsGm(double receivingYardsGm) {
-        this.receivingYardsGm = receivingYardsGm;
-    }
-
-    public double getReceivingYardsAfterCatchGm() {
-        return receivingYardsAfterCatchGm;
-    }
-
-    public void setReceivingYardsAfterCatchGm(double receivingYardsAfterCatchGm) {
-        this.receivingYardsAfterCatchGm = receivingYardsAfterCatchGm;
-    }
-
-    public double getReceivingTDsGm() {
-        return receivingTDsGm;
-    }
-
-    public void setReceivingTDsGm(double receivingTDsGm) {
-        this.receivingTDsGm = receivingTDsGm;
-    }
-
-    public double getReceivingTwoPtsGm() {
-        return receivingTwoPtsGm;
-    }
-
-    public void setReceivingTwoPtsGm(double receivingTwoPtsGm) {
-        this.receivingTwoPtsGm = receivingTwoPtsGm;
-    }
-
-    public double getCatchPerGm() {
-        return catchPerGm;
-    }
-
-    public void setCatchPerGm(double catchPerGm) {
-        this.catchPerGm = catchPerGm;
-    }
-
-    public double getYardsPerTarGm() {
-        return yardsPerTarGm;
-    }
-
-    public void setYardsPerTarGm(double yardsPerTarGm) {
-        this.yardsPerTarGm = yardsPerTarGm;
-    }
-
-    public double getYardsPerCatGm() {
-        return yardsPerCatGm;
-    }
-
-    public void setYardsPerCatGm(double yardsPerCatGm) {
-        this.yardsPerCatGm = yardsPerCatGm;
-    }
+    private double fantasyPtsTotal;
+    private double fantasyPtsGm;
 
     public Player(String id, String name) {
         this.id = id;
@@ -287,6 +55,31 @@ public class Player {
 
     public void addWeek(Week week) {
         weeks.add(week);
+    }
+
+    public void calculateGamesPlayed() {
+        gamesPlayed = weeks.size();
+    }
+
+    public void addEmptyWeeks() {
+        int startWeek = 1;
+        for (int i = 0; i < weeks.size();) {
+            WeekInfo currentWeekInfo = weeks.get(i).getWeekInfo();
+            int currentWeek = currentWeekInfo.getWeek();
+
+            for (int j = startWeek; j < currentWeek; j++) {
+                WeekInfo weekInfo = new WeekInfo(currentWeekInfo.getTeam(), currentWeekInfo.getPosition(), currentWeekInfo.getYear(), j, currentWeekInfo.isHome());
+                PassingStats passingStats = new PassingStats(0, 0, 0, 0, 0, 0, 0);
+                ReceivingStats receivingStats = new ReceivingStats(0, 0, 0, 0, 0, 0);
+                RushingStats rushingStats = new RushingStats(0, 0, 0, 0, 0);
+                MiscStats miscStats = new MiscStats(0, 0);
+                weeks.add(j - 1, new Week(weekInfo, passingStats, receivingStats, rushingStats, miscStats));
+                i++;
+            }
+
+            startWeek = currentWeek + 1;
+            i++;
+        }
     }
 
     public void calculateTrends() {
@@ -314,8 +107,6 @@ public class Player {
         double fumblesTotal = 0;
         double fumblesLostTotal = 0;
 
-        int totalWeeks = weeks.size();
-
         for (Week w : weeks) {
             passingAttsTotal += w.getPassingStats().getPassingAttempts();
             passingCmpsTotal += w.getPassingStats().getPassingCompletions();
@@ -342,44 +133,50 @@ public class Player {
             fumblesLostTotal += w.getMiscStats().getFumblesLost();
         }
 
-        passingAttsGm = passingAttsTotal / totalWeeks;
-        passingCmpsGm = passingCmpsTotal / totalWeeks;
-        passingYardsGm = passingYardsTotal / totalWeeks;
-        passingIntsGm = passingIntsTotal / totalWeeks;
-        passingTDsGm = passingTDsTotal / totalWeeks;
-        passingTwoPtsGm = passingTwoPtsTotal / totalWeeks;
-        passingTwoPtAttsGm = passingTwoPtAttsTotal / totalWeeks;
+        passingAttsGm = passingAttsTotal / gamesPlayed;
+        passingCmpsGm = passingCmpsTotal / gamesPlayed;
+        passingYardsGm = passingYardsTotal / gamesPlayed;
+        passingIntsGm = passingIntsTotal / gamesPlayed;
+        passingTDsGm = passingTDsTotal / gamesPlayed;
+        passingTwoPtsGm = passingTwoPtsTotal / gamesPlayed;
+        passingTwoPtAttsGm = passingTwoPtAttsTotal / gamesPlayed;
         passingCmpPerGm = passingAttsGm / passingCmpsGm;
         yardsPerAttGm = passingYardsGm / passingAttsGm;
         yardsPerCmpGm = passingYardsGm / passingCmpsGm;
 
-        rushingAttemptsGm = rushingAttemptsTotal / totalWeeks;
-        rushingYardsGm = rushingYardsTotal / totalWeeks;
-        rushingYardsAfterContactGm = rushingYardsAfterContactTotal / totalWeeks;
-        rushingTDsGm = rushingTDsTotal / totalWeeks;
-        rushingTwoPtsGm = rushingTwoPtsTotal / totalWeeks;
+        rushingAttemptsGm = rushingAttemptsTotal / gamesPlayed;
+        rushingYardsGm = rushingYardsTotal / gamesPlayed;
+        rushingYardsAfterContactGm = rushingYardsAfterContactTotal / gamesPlayed;
+        rushingTDsGm = rushingTDsTotal / gamesPlayed;
+        rushingTwoPtsGm = rushingTwoPtsTotal / gamesPlayed;
         yardsPerCarryGm = rushingYardsGm / rushingAttemptsGm;
 
-        receivingTargetsGm = receivingTargetsTotal / totalWeeks;
-        receivingReceptionsGm = receivingReceptionsTotal / totalWeeks;
-        receivingYardsGm = receivingYardsTotal / totalWeeks;
-        receivingYardsAfterCatchGm = receivingYardsAfterCatchTotal / totalWeeks;
-        receivingTDsGm = receivingTDsTotal / totalWeeks;
-        receivingTwoPtsGm = receivingTwoPtsTotal / totalWeeks;
+        receivingTargetsGm = receivingTargetsTotal / gamesPlayed;
+        receivingReceptionsGm = receivingReceptionsTotal / gamesPlayed;
+        receivingYardsGm = receivingYardsTotal / gamesPlayed;
+        receivingYardsAfterCatchGm = receivingYardsAfterCatchTotal / gamesPlayed;
+        receivingTDsGm = receivingTDsTotal / gamesPlayed;
+        receivingTwoPtsGm = receivingTwoPtsTotal / gamesPlayed;
         catchPerGm = receivingReceptionsGm / receivingTargetsGm;
         yardsPerTarGm = receivingYardsGm / receivingTargetsGm;
         yardsPerCatGm = receivingYardsGm / receivingReceptionsGm;
 
-        fumblesGm = fumblesTotal / totalWeeks;
-        fumblesLostGm = fumblesLostTotal / totalWeeks;
+        fumblesGm = fumblesTotal / gamesPlayed;
+        fumblesLostGm = fumblesLostTotal / gamesPlayed;
+
+        fantasyPtsTotal = passingYardsTotal * 0.04 + passingTDsTotal * 4 + passingIntsTotal * -2 + passingTwoPtsTotal * 2 +
+                          receivingYardsTotal * 0.1 + receivingTDsTotal * 6 + receivingTwoPtsTotal * 2 +
+                          rushingYardsTotal * 0.1 + rushingTDsTotal * 6 + rushingTwoPtsTotal * 2 +
+                          fumblesTotal * -1 + fumblesLostTotal * -1;
+        fantasyPtsGm = fantasyPtsTotal / gamesPlayed;
     }
 
     public String printCSV() {
-        String line = id + "," + name + ",";
+        StringBuilder stringBuilder = new StringBuilder(id + "," + name + ",");
         for (Week w : weeks) {
-            line += w.printCSV();
+            stringBuilder.append(w.printCSV());
         }
-        line += passingAttsGm + "," +
+        stringBuilder.append(passingAttsGm + "," +
                 passingCmpsGm + "," +
                 passingCmpPerGm + "," +
                 passingYardsGm + "," +
@@ -405,8 +202,10 @@ public class Player {
                 rushingTwoPtsGm + "," +
                 yardsPerCarryGm + "," +
                 fumblesGm + "," +
-                fumblesLostGm;
+                fumblesLostGm + "," +
+                fantasyPtsTotal + "," +
+                fantasyPtsGm);
 
-        return line;
+        return stringBuilder.toString();
     }
 }

@@ -7,6 +7,7 @@ public class Week {
     private ReceivingStats receivingStats;
     private RushingStats rushingStats;
     private MiscStats miscStats;
+    private double fantasyPts;
 
     public Week(WeekInfo weekInfo, PassingStats passingStats, ReceivingStats receivingStats, RushingStats rushingStats, MiscStats miscStats) {
         this.weekInfo = weekInfo;
@@ -14,49 +15,28 @@ public class Week {
         this.receivingStats = receivingStats;
         this.rushingStats = rushingStats;
         this.miscStats = miscStats;
+
+        this.fantasyPts = passingStats.getFP() + receivingStats.getFP() + rushingStats.getFP() + miscStats.getFP();
     }
 
     public WeekInfo getWeekInfo() {
         return weekInfo;
     }
 
-    public void setWeekInfo(WeekInfo weekInfo) {
-        this.weekInfo = weekInfo;
-    }
-
     public PassingStats getPassingStats() {
         return passingStats;
     }
-
-    public void setPassingStats(PassingStats passingStats) {
-        this.passingStats = passingStats;
-    }
-
     public ReceivingStats getReceivingStats() {
         return receivingStats;
     }
-
-    public void setReceivingStats(ReceivingStats receivingStats) {
-        this.receivingStats = receivingStats;
-    }
-
     public RushingStats getRushingStats() {
         return rushingStats;
     }
-
-    public void setRushingStats(RushingStats rushingStats) {
-        this.rushingStats = rushingStats;
-    }
-
     public MiscStats getMiscStats() {
         return miscStats;
     }
 
-    public void setMiscStats(MiscStats miscStats) {
-        this.miscStats = miscStats;
-    }
-
     public String printCSV() {
-        return weekInfo.printCSV() + passingStats.printCSV() + receivingStats.printCSV() + rushingStats.printCSV() + miscStats.printCSV();
+        return weekInfo.printCSV() + passingStats.printCSV() + receivingStats.printCSV() + rushingStats.printCSV() + miscStats.printCSV() + fantasyPts + ",";
     }
 }

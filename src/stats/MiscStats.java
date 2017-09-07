@@ -13,17 +13,12 @@ public class MiscStats implements Info {
     public int getFumbles() {
         return fumbles;
     }
-
-    public void setFumbles(int fumbles) {
-        this.fumbles = fumbles;
-    }
-
     public int getFumblesLost() {
         return fumblesLost;
     }
 
-    public void setFumblesLost(int fumblesLost) {
-        this.fumblesLost = fumblesLost;
+    public double getFP() {
+        return fumbles * -1 + fumblesLost * -1;
     }
 
     public String printCSV() {

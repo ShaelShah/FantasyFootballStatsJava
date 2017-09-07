@@ -30,76 +30,27 @@ public class ReceivingStats implements Info {
             yardsPerCat = receivingYards / receivingReceptions;
     }
 
-    public double getCatchPer() {
-        return catchPer;
-    }
-
-    public void setCatchPer(double catchPer) {
-        this.catchPer = catchPer;
-    }
-
-    public double getYardsPerTar() {
-        return yardsPerTar;
-    }
-
-    public void setYardsPerTar(double yardsPerTar) {
-        this.yardsPerTar = yardsPerTar;
-    }
-
-    public double getYardsPerCmp() {
-        return yardsPerCat;
-    }
-
-    public void setYardsPerCmp(double yardsPerCmp) {
-        this.yardsPerCat = yardsPerCmp;
-    }
-
     public int getReceivingTargets() {
         return receivingTargets;
     }
-
-    public void setReceivingTargets(int receivingTargets) {
-        this.receivingTargets = receivingTargets;
-    }
-
     public int getReceivingReceptions() {
         return receivingReceptions;
     }
-
-    public void setReceivingReceptions(int receivingReceptions) {
-        this.receivingReceptions = receivingReceptions;
-    }
-
     public int getReceivingYards() {
         return receivingYards;
     }
-
-    public void setReceivingYards(int receivingYards) {
-        this.receivingYards = receivingYards;
-    }
-
     public int getReceivingYardsAfterCatch() {
         return receivingYardsAfterCatch;
     }
-
-    public void setReceivingYardsAfterCatch(int receivingYardsAfterCatch) {
-        this.receivingYardsAfterCatch = receivingYardsAfterCatch;
-    }
-
     public int getReceivingTDs() {
         return receivingTDs;
     }
-
-    public void setReceivingTDs(int receivingTDs) {
-        this.receivingTDs = receivingTDs;
-    }
-
     public int getReceivingTwoPts() {
         return receivingTwoPts;
     }
 
-    public void setReceivingTwoPts(int receivingTwoPts) {
-        this.receivingTwoPts = receivingTwoPts;
+    public double getFP() {
+        return receivingYards * 0.1 + receivingTDs * 6 + receivingTwoPts * 2;
     }
 
     public String printCSV() {

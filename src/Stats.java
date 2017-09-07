@@ -11,6 +11,16 @@ public class Stats {
         //CSV to Objects
         List<Player> players = csvToObjects();
 
+        //Calculate games played
+        for (Player p : players) {
+            p.calculateGamesPlayed();
+        }
+
+        //Add empty weeks
+        for (Player p : players) {
+            p.addEmptyWeeks();
+        }
+
         //Calculate extra stats
         for (Player p : players) {
             p.calculateTrends();
@@ -65,8 +75,9 @@ public class Stats {
 
                     Week week = new Week(weekInfo, passingStats,receivingStats, rushingStats, miscStats);
                     player.addWeek(week);
-                    players.add(player);
                 }
+
+                players.add(player);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -81,9 +92,20 @@ public class Stats {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fileOutputStream, "utf-8");
             Writer writer = new BufferedWriter(outputStreamWriter);
 
+            writer.write("ID,Player,");
+            for (int i = 0; i < 17; i++) {
+                writer.write("Team,Position,Year,Week,Home,Atts,Comps,Comp %,Yards,Yards per Att,Yards per Comp,Ints,TDs,Two Pts,Two Pt Atts,");
+                writer.write("Tgt,Rec,Rec %,Yards,Yards per Tgt,Yards per Rec,Yards after Catch,TDs,Two Pts,");
+                writer.write("Carries,Yards,YPC,Yards after Catch,TDs,Two Pts,");
+                writer.write("Fumbles,Fumbles Lost,Fantasy Pts,");
+            }
+            writer.write("passingAttsGm,passingCmpsGm,passingCmpPerGm,passingYardsGm,passingIntsGm,passingTDsGm,passingTwoPtsGm,passingTwoPtAttsGm,yardsPerAttGm,yardsPerCmpGm,receivingTargetsGm,receivingReceptionsGm,receivingYardsGm,receivingYardsAfterCatchGm,receivingTDsGm,receivingTwoPtsGm,catchPerGm,yardsPerTarGm,yardsPerCatGm,rushingAttemptsGm,rushingYardsGm,rushingYardsAfterContactGm,rushingTDsGm,rushingTwoPtsGm,yardsPerCarryGm,fumblesGm,fumblesLostGm,fantasyPtsTotal,fantasyPtsGm\n");
+
             for (Player p : players) {
                 writer.write(p.printCSV() + "\n");
             }
+
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

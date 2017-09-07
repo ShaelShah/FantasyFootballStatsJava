@@ -35,81 +35,27 @@ public class PassingStats implements Info {
     public int getPassingCompletions() {
         return passingCompletions;
     }
-
     public int getPassingYards() {
         return passingYards;
     }
-
     public int getPassingInts() {
         return passingInts;
     }
-
     public int getPassingTDs() {
         return passingTDs;
     }
-
     public int getPassingTwoPts() {
         return passingTwoPts;
     }
-
     public int getPassingTwoPtAtts() {
         return passingTwoPtAtts;
     }
-
-    public void setPassingCompletions(int passingCompletions) {
-        this.passingCompletions = passingCompletions;
-    }
-
-    public void setPassingYards(int passingYards) {
-        this.passingYards = passingYards;
-    }
-
-    public void setPassingInts(int passingInts) {
-        this.passingInts = passingInts;
-    }
-
-    public void setPassingTDs(int passingTDs) {
-        this.passingTDs = passingTDs;
-    }
-
-    public void setPassingTwoPts(int passingTwoPts) {
-        this.passingTwoPts = passingTwoPts;
-    }
-
-    public void setPassingTwoPtAtts(int passingTwoPtAtts) {
-        this.passingTwoPtAtts = passingTwoPtAtts;
-    }
-
     public int getPassingAttempts() {
         return passingAttempts;
     }
 
-    public void setPassingAttempts(int passingAttempts) {
-        this.passingAttempts = passingAttempts;
-    }
-
-    public double getPassingCmpPer() {
-        return passingCmpPer;
-    }
-
-    public void setPassingCmpPer(double passingCmpPer) {
-        this.passingCmpPer = passingCmpPer;
-    }
-
-    public double getYardsPerAtt() {
-        return yardsPerAtt;
-    }
-
-    public void setYardsPerAtt(double yardsPerAtt) {
-        this.yardsPerAtt = yardsPerAtt;
-    }
-
-    public double getYardsPerCmp() {
-        return yardsPerCmp;
-    }
-
-    public void setYardsPerCmp(double yardsPerCmp) {
-        this.yardsPerCmp = yardsPerCmp;
+    public double getFP() {
+        return passingYards * 0.04 + passingTDs * 4 + passingInts * -2 + passingTwoPts * 2;
     }
 
     public String printCSV() {

@@ -20,40 +20,20 @@ public class WeekInfo implements Info {
         return team;
     }
 
-    public void setTeam(String team) {
-        this.team = team;
-    }
-
     public String getPosition() {
         return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
     }
 
     public int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getWeek() {
-        return week;
-    }
-
-    public void setWeek(int week) {
-        this.week = week;
-    }
-
     public boolean isHome() {
         return home;
     }
 
-    public void setHome(boolean home) {
-        this.home = home;
+    public int getWeek() {
+        return week;
     }
 
     public String printCSV() {

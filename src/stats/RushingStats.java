@@ -21,52 +21,24 @@ public class RushingStats implements Info {
             yardsPerCarry = rushingYards / rushingAttempts;
     }
 
-    public double getYardsPerCarry() {
-        return yardsPerCarry;
-    }
-
-    public void setYardsPerCarry(double yardsPerCarry) {
-        this.yardsPerCarry = yardsPerCarry;
-    }
-
     public int getRushingAttempts() {
         return rushingAttempts;
     }
-
-    public void setRushingAttempts(int rushingAttempts) {
-        this.rushingAttempts = rushingAttempts;
-    }
-
     public int getRushingYards() {
         return rushingYards;
     }
-
-    public void setRushingYards(int rushingYards) {
-        this.rushingYards = rushingYards;
-    }
-
     public int getRushingYardsAfterContact() {
         return rushingYardsAfterContact;
     }
-
-    public void setRushingYardsAfterContact(int rushingYardsAfterContact) {
-        this.rushingYardsAfterContact = rushingYardsAfterContact;
-    }
-
     public int getRushingTDs() {
         return rushingTDs;
     }
-
-    public void setRushingTDs(int rushingTDs) {
-        this.rushingTDs = rushingTDs;
-    }
-
     public int getRushingTwoPts() {
         return rushingTwoPts;
     }
 
-    public void setRushingTwoPts(int rushingTwoPts) {
-        this.rushingTwoPts = rushingTwoPts;
+    public double getFP() {
+        return rushingYards * 0.1 + rushingTDs * 6 + rushingTwoPts * 2;
     }
 
     public String printCSV() {
