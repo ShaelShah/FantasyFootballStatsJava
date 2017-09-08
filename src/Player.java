@@ -62,23 +62,33 @@ public class Player {
     }
 
     public void addEmptyWeeks() {
-        int startWeek = 1;
-        for (int i = 0; i < weeks.size();) {
-            WeekInfo currentWeekInfo = weeks.get(i).getWeekInfo();
-            int currentWeek = currentWeekInfo.getWeek();
 
-            for (int j = startWeek; j < currentWeek; j++) {
-                WeekInfo weekInfo = new WeekInfo(currentWeekInfo.getTeam(), currentWeekInfo.getPosition(), currentWeekInfo.getYear(), j, currentWeekInfo.isHome());
-                PassingStats passingStats = new PassingStats(0, 0, 0, 0, 0, 0, 0);
-                ReceivingStats receivingStats = new ReceivingStats(0, 0, 0, 0, 0, 0);
-                RushingStats rushingStats = new RushingStats(0, 0, 0, 0, 0);
-                MiscStats miscStats = new MiscStats(0, 0);
-                weeks.add(j - 1, new Week(weekInfo, passingStats, receivingStats, rushingStats, miscStats));
+        WeekInfo lastWeek = weeks.get(weeks.size() - 1).getWeekInfo();
+        WeekInfo week17 = new WeekInfo(lastWeek.getTeam(), lastWeek.getPosition(), lastWeek.getYear(), 17, lastWeek.isHome());
+        PassingStats passingStats = new PassingStats(0, 0, 0, 0, 0, 0, 0);
+        ReceivingStats receivingStats = new ReceivingStats(0, 0, 0, 0, 0, 0);
+        RushingStats rushingStats = new RushingStats(0, 0, 0, 0, 0);
+        MiscStats miscStats = new MiscStats(0, 0);
+
+        if (lastWeek.getWeek() != 17) {
+            weeks.add(new Week(week17, passingStats, receivingStats, rushingStats, miscStats));
+        }
+
+        if (weeks.size() < 17) {
+            int startWeek = 1;
+            for (int i = 0; i < weeks.size(); ) {
+                WeekInfo currentWeekInfo = weeks.get(i).getWeekInfo();
+                int currentWeek = currentWeekInfo.getWeek();
+
+                for (int j = startWeek; j < currentWeek; j++) {
+                    WeekInfo weekInfo = new WeekInfo(currentWeekInfo.getTeam(), currentWeekInfo.getPosition(), currentWeekInfo.getYear(), j, currentWeekInfo.isHome());
+                    weeks.add(j - 1, new Week(weekInfo, passingStats, receivingStats, rushingStats, miscStats));
+                    i++;
+                }
+
+                startWeek = currentWeek + 1;
                 i++;
             }
-
-            startWeek = currentWeek + 1;
-            i++;
         }
     }
 
