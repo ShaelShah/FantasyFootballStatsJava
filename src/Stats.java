@@ -38,7 +38,7 @@ public class Stats {
         }
 
         //Dump all objects to CSV
-        //objectsToCSV(players);
+        objectsToCSV(players);
 
         //Dump all objects to EXCEL
         objectsToXLSX(players);
@@ -50,7 +50,7 @@ public class Stats {
             FileReader fileReader = new FileReader(rawDataFile);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
 
-            String line = null;
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String parts[] = line.split(",");
 
