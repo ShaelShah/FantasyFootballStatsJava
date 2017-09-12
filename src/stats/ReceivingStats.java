@@ -2,66 +2,83 @@ package stats;
 
 public class ReceivingStats implements Info {
 
-    private int receivingTargets;
-    private int receivingReceptions;
-    private int receivingYards;
-    private int receivingYardsAfterCatch;
-    private int receivingTDs;
-    private int receivingTwoPts;
+    private int targets;
+    private int receptions;
+    private int yards;
+    private int yardsAfterCatch;
+    private int tds;
+    private int twoPts;
 
-    private double catchPer = 0.0;
+    private double recPer = 0.0;
     private double yardsPerTar = 0.0;
-    private double yardsPerCat = 0.0;
+    private double yardsPerRec = 0.0;
 
-    public ReceivingStats(int receivingTargets, int receivingReceptions, int receivingYards, int receivingYardsAfterCatch, int receivingTDs, int receivingTwoPts) {
-        this.receivingTargets = receivingTargets;
-        this.receivingReceptions = receivingReceptions;
-        this.receivingYards = receivingYards;
-        this.receivingYardsAfterCatch = receivingYardsAfterCatch;
-        this.receivingTDs = receivingTDs;
-        this.receivingTwoPts = receivingTwoPts;
+    public ReceivingStats(int targets, int receptions, int yards, int yardsAfterCatch, int tds, int twoPts) {
+        this.targets = targets;
+        this.receptions = receptions;
+        this.yards = yards;
+        this.yardsAfterCatch = yardsAfterCatch;
+        this.tds = tds;
+        this.twoPts = twoPts;
 
-        if (receivingTargets != 0) {
-            catchPer = receivingReceptions / receivingTargets;
-            yardsPerTar = receivingYards / receivingTargets;
+        if (targets != 0) {
+            recPer = receptions / targets;
+            yardsPerTar = yards / targets;
         }
 
-        if (yardsPerCat != 0)
-            yardsPerCat = receivingYards / receivingReceptions;
+        if (yardsPerRec != 0)
+            yardsPerRec = yards / receptions;
     }
 
-    public int getReceivingTargets() {
-        return receivingTargets;
+    public int getTargets() {
+        return targets;
     }
-    public int getReceivingReceptions() {
-        return receivingReceptions;
+
+    public int getReceptions() {
+        return receptions;
     }
-    public int getReceivingYards() {
-        return receivingYards;
+
+    public int getYards() {
+        return yards;
     }
-    public int getReceivingYardsAfterCatch() {
-        return receivingYardsAfterCatch;
+
+    public int getYardsAfterCatch() {
+        return yardsAfterCatch;
     }
-    public int getReceivingTDs() {
-        return receivingTDs;
+
+    public int getTds() {
+        return tds;
     }
-    public int getReceivingTwoPts() {
-        return receivingTwoPts;
+
+    public int getTwoPts() {
+        return twoPts;
+    }
+
+    public double getRecPer() {
+        return recPer;
+    }
+
+    public double getYardsPerTar() {
+        return yardsPerTar;
+    }
+
+    public double getYardsPerRec() {
+        return yardsPerRec;
     }
 
     public double getFP() {
-        return receivingYards * 0.1 + receivingTDs * 6 + receivingTwoPts * 2;
+        return yards * 0.1 + tds * 6 + twoPts * 2;
     }
 
     public String printCSV() {
-        return receivingTargets + "," +
-                receivingReceptions + "," +
-                catchPer + "," +
-                receivingYards + "," +
+        return targets + "," +
+                receptions + "," +
+                recPer + "," +
+                yards + "," +
                 yardsPerTar + "," +
-                yardsPerCat + "," +
-                receivingYardsAfterCatch + "," +
-                receivingTDs + "," +
-                receivingTwoPts + ",";
+                yardsPerRec + "," +
+                yardsAfterCatch + "," +
+                tds + "," +
+                twoPts + ",";
     }
 }

@@ -13,6 +13,7 @@ public class MiscStats implements Info {
     public int getFumbles() {
         return fumbles;
     }
+
     public int getFumblesLost() {
         return fumblesLost;
     }

@@ -2,51 +2,59 @@ package stats;
 
 public class RushingStats implements Info {
 
-    private int rushingAttempts;
-    private int rushingYards;
-    private int rushingYardsAfterContact;
-    private int rushingTDs;
-    private int rushingTwoPts;
+    private int carries;
+    private int yards;
+    private int yardsAfterContact;
+    private int tds;
+    private int twoPts;
 
     private double yardsPerCarry = 0.0;
 
-    public RushingStats(int rushingAttempts, int rushingYards, int rushingYardsAfterContact, int rushingTDs, int rushingTwoPts) {
-        this.rushingAttempts = rushingAttempts;
-        this.rushingYards = rushingYards;
-        this.rushingYardsAfterContact = rushingYardsAfterContact;
-        this.rushingTDs = rushingTDs;
-        this.rushingTwoPts = rushingTwoPts;
+    public RushingStats(int carries, int yards, int yardsAfterContact, int tds, int twoPts) {
+        this.carries = carries;
+        this.yards = yards;
+        this.yardsAfterContact = yardsAfterContact;
+        this.tds = tds;
+        this.twoPts = twoPts;
 
-        if (rushingAttempts != 0)
-            yardsPerCarry = rushingYards / rushingAttempts;
+        if (carries != 0)
+            yardsPerCarry = yards / carries;
     }
 
-    public int getRushingAttempts() {
-        return rushingAttempts;
+    public int getCarries() {
+        return carries;
     }
-    public int getRushingYards() {
-        return rushingYards;
+
+    public int getYards() {
+        return yards;
     }
-    public int getRushingYardsAfterContact() {
-        return rushingYardsAfterContact;
+
+    public int getYardsAfterContact() {
+        return yardsAfterContact;
     }
-    public int getRushingTDs() {
-        return rushingTDs;
+
+    public int getTds() {
+        return tds;
     }
-    public int getRushingTwoPts() {
-        return rushingTwoPts;
+
+    public int getTwoPts() {
+        return twoPts;
+    }
+
+    public double getYardsPerCarry() {
+        return yardsPerCarry;
     }
 
     public double getFP() {
-        return rushingYards * 0.1 + rushingTDs * 6 + rushingTwoPts * 2;
+        return yards * 0.1 + tds * 6 + twoPts * 2;
     }
 
     public String printCSV() {
-        return rushingAttempts + "," +
-                rushingYards + "," +
+        return carries + "," +
+                yards + "," +
                 yardsPerCarry + "," +
-                rushingYardsAfterContact + "," +
-                rushingTDs + "," +
-                rushingTwoPts + ",";
+                yardsAfterContact + "," +
+                tds + "," +
+                twoPts + ",";
     }
 }

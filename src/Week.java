@@ -15,7 +15,6 @@ public class Week {
         this.receivingStats = receivingStats;
         this.rushingStats = rushingStats;
         this.miscStats = miscStats;
-
         this.fantasyPts = passingStats.getFP() + receivingStats.getFP() + rushingStats.getFP() + miscStats.getFP();
     }
 
@@ -26,14 +25,21 @@ public class Week {
     public PassingStats getPassingStats() {
         return passingStats;
     }
+
     public ReceivingStats getReceivingStats() {
         return receivingStats;
     }
+
     public RushingStats getRushingStats() {
         return rushingStats;
     }
+
     public MiscStats getMiscStats() {
         return miscStats;
+    }
+
+    public double getFantasyPts() {
+        return fantasyPts;
     }
 
     public String printCSV() {

@@ -2,72 +2,90 @@ package stats;
 
 public class PassingStats implements Info {
 
-    private int passingAttempts;
-    private int passingCompletions;
-    private int passingYards;
-    private int passingInts;
-    private int passingTDs;
-    private int passingTwoPts;
-    private int passingTwoPtAtts;
+    private int attempts;
+    private int completions;
+    private int yards;
+    private int interceptions;
+    private int tds;
+    private int twoPts;
+    private int twoPtAtts;
 
-    private double passingCmpPer = 0.0;
+    private double cmpPer = 0.0;
     private double yardsPerAtt = 0.0;
     private double yardsPerCmp = 0.0;
 
-    public PassingStats(int passingAttempts, int passingCompletions, int passingYards, int passingInts, int passingTDs, int passingTwoPts, int passingTwoPtAtts) {
-        this.passingAttempts = passingAttempts;
-        this.passingCompletions = passingCompletions;
-        this.passingYards = passingYards;
-        this.passingInts = passingInts;
-        this.passingTDs = passingTDs;
-        this.passingTwoPts = passingTwoPts;
-        this.passingTwoPtAtts = passingTwoPtAtts;
+    public PassingStats(int attempts, int completions, int yards, int interceptions, int tds, int twoPts, int twoPtAtts) {
+        this.attempts = attempts;
+        this.completions = completions;
+        this.yards = yards;
+        this.interceptions = interceptions;
+        this.tds = tds;
+        this.twoPts = twoPts;
+        this.twoPtAtts = twoPtAtts;
 
-        if (passingAttempts != 0) {
-            passingCmpPer = passingCompletions / passingAttempts;
-            yardsPerAtt = passingYards / passingAttempts;
+        if (attempts != 0) {
+            cmpPer = completions / attempts;
+            yardsPerAtt = yards / attempts;
         }
 
-        if (passingCompletions != 0)
-            yardsPerCmp = passingYards / passingCompletions;
+        if (completions != 0)
+            yardsPerCmp = yards / completions;
     }
 
-    public int getPassingCompletions() {
-        return passingCompletions;
+    public int getAttempts() {
+        return attempts;
     }
-    public int getPassingYards() {
-        return passingYards;
+
+    public int getCompletions() {
+        return completions;
     }
-    public int getPassingInts() {
-        return passingInts;
+
+    public int getYards() {
+        return yards;
     }
-    public int getPassingTDs() {
-        return passingTDs;
+
+    public int getInterceptions() {
+        return interceptions;
     }
-    public int getPassingTwoPts() {
-        return passingTwoPts;
+
+    public int getTds() {
+        return tds;
     }
-    public int getPassingTwoPtAtts() {
-        return passingTwoPtAtts;
+
+    public int getTwoPts() {
+        return twoPts;
     }
-    public int getPassingAttempts() {
-        return passingAttempts;
+
+    public int getTwoPtAtts() {
+        return twoPtAtts;
+    }
+
+    public double getCmpPer() {
+        return cmpPer;
+    }
+
+    public double getYardsPerAtt() {
+        return yardsPerAtt;
+    }
+
+    public double getYardsPerCmp() {
+        return yardsPerCmp;
     }
 
     public double getFP() {
-        return passingYards * 0.04 + passingTDs * 4 + passingInts * -2 + passingTwoPts * 2;
+        return yards * 0.04 + tds * 4 + interceptions * -2 + twoPts * 2;
     }
 
     public String printCSV() {
-        return passingAttempts + "," +
-                passingCompletions + "," +
-                passingCmpPer + "," +
-                passingYards + "," +
+        return attempts + "," +
+                completions + "," +
+                cmpPer + "," +
+                yards + "," +
                 yardsPerAtt + "," +
                 yardsPerCmp + "," +
-                passingInts + "," +
-                passingTDs + "," +
-                passingTwoPts + "," +
-                passingTwoPtAtts + ",";
+                interceptions + "," +
+                tds + "," +
+                twoPts + "," +
+                twoPtAtts + ",";
     }
 }
