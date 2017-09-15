@@ -24,12 +24,12 @@ public class PassingStats implements Info {
         this.twoPtAtts = twoPtAtts;
 
         if (attempts != 0) {
-            cmpPer = completions / attempts;
-            yardsPerAtt = yards / attempts;
+            cmpPer = (double) completions / attempts;
+            yardsPerAtt = (double) yards / attempts;
         }
 
         if (completions != 0)
-            yardsPerCmp = yards / completions;
+            yardsPerCmp = (double) yards / completions;
     }
 
     public int getAttempts() {
@@ -73,7 +73,7 @@ public class PassingStats implements Info {
     }
 
     public double getFP() {
-        return yards * 0.04 + tds * 4 + interceptions * -2 + twoPts * 2;
+        return (yards * 0.04) + (tds * 4) + (interceptions * -1) + (twoPts * 2);
     }
 
     public String printCSV() {

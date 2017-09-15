@@ -18,7 +18,7 @@ public class RushingStats implements Info {
         this.twoPts = twoPts;
 
         if (carries != 0)
-            yardsPerCarry = yards / carries;
+            yardsPerCarry = (double) yards / carries;
     }
 
     public int getCarries() {
@@ -46,7 +46,7 @@ public class RushingStats implements Info {
     }
 
     public double getFP() {
-        return yards * 0.1 + tds * 6 + twoPts * 2;
+        return (yards * 0.1) + (tds * 6) + (twoPts * 2);
     }
 
     public String printCSV() {

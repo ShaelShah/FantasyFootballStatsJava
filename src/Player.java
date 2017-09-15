@@ -155,6 +155,7 @@ public class Player {
         pTwoPtsGm = pTwoPtsTot / gamesPlayed;
         pTwoPtAttsGm = pTwoPtAttsTot / gamesPlayed;
         cmpPerGm = completionsGm / attemptsGm;
+
         yardsPerAttGm = pYardsGm / attemptsGm;
         yardsPerCmpGm = pYardsGm / completionsGm;
 
@@ -178,7 +179,7 @@ public class Player {
         fumblesGm = fumblesTot / gamesPlayed;
         fumblesLostGm = fumblesLostTot / gamesPlayed;
 
-        fantasyPtsTotal = pYardsTot * 0.04 + pTdsTot * 4 + interceptionsTot * -2 + pTwoPtsTot * 2 +
+        fantasyPtsTotal = pYardsTot * 0.04 + pTdsTot * 4 + interceptionsTot * -1 + pTwoPtsTot * 2 +
                           rYardsTot * 0.1 + rTdsTot * 6 + rTwoPtsTot * 2 +
                           ruYardsTot * 0.1 + ruTdsTot * 6 + ruTwoPtsTot * 2 +
                           fumblesTot * -1 + fumblesLostTot * -1;

@@ -22,12 +22,12 @@ public class ReceivingStats implements Info {
         this.twoPts = twoPts;
 
         if (targets != 0) {
-            recPer = receptions / targets;
-            yardsPerTar = yards / targets;
+            recPer = (double) receptions / targets;
+            yardsPerTar = (double) yards / targets;
         }
 
         if (yardsPerRec != 0)
-            yardsPerRec = yards / receptions;
+            yardsPerRec = (double) yards / receptions;
     }
 
     public int getTargets() {
@@ -67,7 +67,7 @@ public class ReceivingStats implements Info {
     }
 
     public double getFP() {
-        return yards * 0.1 + tds * 6 + twoPts * 2;
+        return (yards * 0.1) + (tds * 6) + (twoPts * 2);
     }
 
     public String printCSV() {
